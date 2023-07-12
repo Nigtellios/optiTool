@@ -1,0 +1,32 @@
+{
+  "name": "optitool",
+  "version": "0.0.1",
+  "description": "OptiTool written in Node.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Nigtellios/optiTool.git"
+  },
+  "author": "Jakub Kowalski",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "2.8.8",
+    "pretty-quick": "3.1.3"
+  },
+  "dependencies": {
+    "imagemin": "^8.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^8.0.0",
+    "minimist": "^1.2.8"
+  },
+  "scripts": {
+    "opti:compress": "node optiTool.mjs -o compress",
+    "opti:webp": "node optiTool.mjs -o webp",
+    "opti:purgewebps": "node optiTool.mjs -o purgewebps"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
